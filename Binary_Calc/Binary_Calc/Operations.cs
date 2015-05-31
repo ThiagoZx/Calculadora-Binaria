@@ -77,7 +77,7 @@ namespace Binary_Calc {
             Array.Reverse(num_result);
             string result = new string(num_result);
 
-            while (result[0] == '0') {
+            while (result[0] == '0' && result.Length != 1) {
                 result = result.Substring(1);
             }
 
@@ -85,6 +85,39 @@ namespace Binary_Calc {
 
         }
 
+        public string operation_Multiplication(string a, string b) {
+
+            string[] partialResults = new string[b.Length];
+
+            string result = "0";
+            char[] multiplicandChar = a.ToCharArray();
+            char[] multiplierChar = b.ToCharArray();
+
+            Array.Reverse(multiplicandChar);           
+            Array.Reverse(multiplierChar);
+
+            for (int i = 0; i < b.Length; i++) {
+                int numberChar_1 = Convert.ToInt32(multiplierChar[i]) - '0';
+                char[] pResults = new char[multiplicandChar.Length];
+                Array.Copy(multiplicandChar, pResults, pResults.Length);
+
+                for (int j = 0; j < a.Length; j++) { 
+                    int numberChar_2 = Convert.ToInt32(pResults[j]) - '0';
+                    pResults[j] = Convert.ToChar(numberChar_1 * numberChar_2 + 48);
+                }
+
+                Array.Reverse(pResults);
+                partialResults[i] = new string(pResults);
+
+                for (int k = 0; k < i; k++) {
+                    partialResults[i] = partialResults[i] + "0";
+                }
+
+                result = operation_Sum(result, partialResults[i]);
+            }
+
+            return result;
+        }
 
     }
 }
