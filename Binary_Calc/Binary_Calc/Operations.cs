@@ -7,14 +7,29 @@ using System.Threading.Tasks;
 namespace Binary_Calc {
     class Operations {
 
-        private string evenStr(string str, int even_limit) {
+        //Funções complementares as operações
+
+        private string evenStr(string str, int even_limit, string operation) {
        
             int strLength = str.Length;
             
             for (int i = 0; i < even_limit - strLength; i++) {
                 str = "0" + str;
             }
-            return stringReverse(str);
+
+            if (operation == "sum") {
+                return stringReverse(str);
+            } else {
+                return str;
+            }
+        }
+
+        private string adjustStr(string str) {
+            while (str[0] == '0' && str.Length != 1) {
+                str = str.Substring(1);
+            }
+
+            return str;
         }
 
         private string stringReverse(string str) {
@@ -48,6 +63,21 @@ namespace Binary_Calc {
             }
         }
 
+        private string complementNumber(string number) {
+            char[] numberChar = number.ToCharArray();
+            
+            for (int i = 0; i < number.Length; i++) {
+                if (numberChar[i] == '0') {
+                    numberChar[i] = '1';
+                } else { numberChar[i] = '0'; }
+            }
+
+            string result = new string(numberChar);
+            result = operation_Sum(result, "1");
+
+            return result;
+        }
+
 
         //Operações
 
@@ -55,8 +85,8 @@ namespace Binary_Calc {
 
             int even_limit = a.Length >= b.Length ? even_limit = a.Length : even_limit = b.Length;
 
-            a = evenStr(a, even_limit);
-            b = evenStr(b, even_limit);
+            a = evenStr(a, even_limit, "sum");
+            b = evenStr(b, even_limit, "sum");
 
             char[] num_1 = a.ToCharArray();
             char[] num_2 = b.ToCharArray();
@@ -77,11 +107,7 @@ namespace Binary_Calc {
             Array.Reverse(num_result);
             string result = new string(num_result);
 
-            while (result[0] == '0' && result.Length != 1) {
-                result = result.Substring(1);
-            }
-
-            return result;
+            return adjustStr(result);
 
         }
 
@@ -119,5 +145,28 @@ namespace Binary_Calc {
             return result;
         }
 
+        public string operation_Subtraction(string a, string b) {
+
+            int limit = a.Length > b.Length ? limit = a.Length : limit = b.Length;
+
+            a = evenStr(a, limit, "subtr"); //ex. 110 --> 110
+            b = evenStr(b, limit, "subtr"); //ex.   1 --> 001
+
+            bool isFirstBigger = Convert.ToInt32(a[0]) >= Convert.ToInt32(b[0]) ? isFirstBigger = true : isFirstBigger = false;
+
+            if (isFirstBigger) {
+                string complementedNumber = complementNumber(b);
+                string partialResult = operation_Sum(a, complementedNumber);
+                partialResult = partialResult.Substring(1);
+                string result = adjustStr(partialResult);
+                return result;
+            } else {
+                string complementedNumber = complementNumber(a);
+                string partialResult = operation_Sum(b, complementedNumber);
+                partialResult = partialResult.Substring(1);
+                string result = "-" + adjustStr(partialResult);
+                return result;
+            }
+        }
     }
 }
