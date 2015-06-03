@@ -78,6 +78,17 @@ namespace Binary_Calc {
             return result;
         }
 
+        private bool divCheck(string a, string b) {
+
+            int limit = a.Length > b.Length ? limit = a.Length : limit = b.Length;
+
+            a = evenStr(a, limit, "subtr"); //ex. 110 --> 110
+            b = evenStr(b, limit, "subtr"); //ex.   1 --> 001
+
+            bool isFirstBigger = Convert.ToInt32(a[0]) >= Convert.ToInt32(b[0]) ? isFirstBigger = true : isFirstBigger = false;
+            return isFirstBigger;
+
+        }
 
         //Operações
 
@@ -165,6 +176,19 @@ namespace Binary_Calc {
                 string partialResult = operation_Sum(b, complementedNumber);
                 partialResult = partialResult.Substring(1);
                 string result = "-" + adjustStr(partialResult);
+                return result;
+            }
+        }
+
+        public string operation_Division(string a, string b, string result) { 
+
+            string c = operation_Subtraction(a, b);
+
+            if(Convert.ToInt32(c) >= 0){
+                result = operation_Sum(result, "1");
+                return operation_Division(c, b, result);
+            } else {
+                result = operation_Sum(result, "1");
                 return result;
             }
         }

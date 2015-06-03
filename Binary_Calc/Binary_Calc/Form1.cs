@@ -21,7 +21,7 @@ namespace Binary_Calc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string b = a.operation_Subtraction("11011", "1011");
+            string b = a.operation_Division("101011", "1111", "0");
             label1.Text = b;
         }
     }
