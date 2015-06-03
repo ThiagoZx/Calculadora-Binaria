@@ -78,18 +78,6 @@ namespace Binary_Calc {
             return result;
         }
 
-        private bool divCheck(string a, string b) {
-
-            int limit = a.Length > b.Length ? limit = a.Length : limit = b.Length;
-
-            a = evenStr(a, limit, "subtr"); //ex. 110 --> 110
-            b = evenStr(b, limit, "subtr"); //ex.   1 --> 001
-
-            bool isFirstBigger = Convert.ToInt32(a[0]) >= Convert.ToInt32(b[0]) ? isFirstBigger = true : isFirstBigger = false;
-            return isFirstBigger;
-
-        }
-
         //Operações
 
         public string operation_Sum(string a, string b) {
