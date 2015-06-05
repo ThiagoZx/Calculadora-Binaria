@@ -40,6 +40,7 @@
             this.ResultInform2 = new System.Windows.Forms.Label();
             this.BinResult = new System.Windows.Forms.Label();
             this.DecResult = new System.Windows.Forms.Label();
+            this.Clean_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_00
@@ -73,6 +74,7 @@
             this.btn_result.TabIndex = 2;
             this.btn_result.Text = "=";
             this.btn_result.UseVisualStyleBackColor = true;
+            this.btn_result.Click += new System.EventHandler(this.Result_Click);
             // 
             // Input
             // 
@@ -81,8 +83,9 @@
             this.Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Input.Location = new System.Drawing.Point(13, 9);
             this.Input.Name = "Input";
-            this.Input.Size = new System.Drawing.Size(298, 64);
+            this.Input.Size = new System.Drawing.Size(298, 65);
             this.Input.TabIndex = 3;
+            this.Input.Text = "0";
             this.Input.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Sum_btn
@@ -93,6 +96,7 @@
             this.Sum_btn.TabIndex = 4;
             this.Sum_btn.Text = "+";
             this.Sum_btn.UseVisualStyleBackColor = true;
+            this.Sum_btn.Click += new System.EventHandler(this.Operator_Click);
             // 
             // Subtraction_btn
             // 
@@ -102,6 +106,7 @@
             this.Subtraction_btn.TabIndex = 5;
             this.Subtraction_btn.Text = "-";
             this.Subtraction_btn.UseVisualStyleBackColor = true;
+            this.Subtraction_btn.Click += new System.EventHandler(this.Operator_Click);
             // 
             // Division_btn
             // 
@@ -111,6 +116,7 @@
             this.Division_btn.TabIndex = 6;
             this.Division_btn.Text = "/";
             this.Division_btn.UseVisualStyleBackColor = true;
+            this.Division_btn.Click += new System.EventHandler(this.Operator_Click);
             // 
             // Multiplication_btn
             // 
@@ -120,12 +126,13 @@
             this.Multiplication_btn.TabIndex = 7;
             this.Multiplication_btn.Text = "x";
             this.Multiplication_btn.UseVisualStyleBackColor = true;
+            this.Multiplication_btn.Click += new System.EventHandler(this.Operator_Click);
             // 
             // ResultInform
             // 
             this.ResultInform.AutoSize = true;
             this.ResultInform.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResultInform.Location = new System.Drawing.Point(90, 210);
+            this.ResultInform.Location = new System.Drawing.Point(96, 197);
             this.ResultInform.Name = "ResultInform";
             this.ResultInform.Size = new System.Drawing.Size(136, 16);
             this.ResultInform.TabIndex = 8;
@@ -135,7 +142,7 @@
             // 
             this.ResultInform2.AutoSize = true;
             this.ResultInform2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResultInform2.Location = new System.Drawing.Point(88, 271);
+            this.ResultInform2.Location = new System.Drawing.Point(93, 237);
             this.ResultInform2.Name = "ResultInform2";
             this.ResultInform2.Size = new System.Drawing.Size(143, 16);
             this.ResultInform2.TabIndex = 9;
@@ -145,7 +152,7 @@
             // 
             this.BinResult.BackColor = System.Drawing.SystemColors.Window;
             this.BinResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BinResult.Location = new System.Drawing.Point(12, 226);
+            this.BinResult.Location = new System.Drawing.Point(12, 213);
             this.BinResult.Name = "BinResult";
             this.BinResult.Size = new System.Drawing.Size(299, 23);
             this.BinResult.TabIndex = 10;
@@ -155,17 +162,28 @@
             // 
             this.DecResult.BackColor = System.Drawing.SystemColors.Window;
             this.DecResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DecResult.Location = new System.Drawing.Point(13, 287);
+            this.DecResult.Location = new System.Drawing.Point(13, 253);
             this.DecResult.Name = "DecResult";
             this.DecResult.Size = new System.Drawing.Size(298, 23);
             this.DecResult.TabIndex = 11;
             this.DecResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Clean_btn
+            // 
+            this.Clean_btn.Location = new System.Drawing.Point(83, 283);
+            this.Clean_btn.Name = "Clean_btn";
+            this.Clean_btn.Size = new System.Drawing.Size(156, 26);
+            this.Clean_btn.TabIndex = 12;
+            this.Clean_btn.Text = "Limpar";
+            this.Clean_btn.UseVisualStyleBackColor = true;
+            this.Clean_btn.Click += new System.EventHandler(this.Clean_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 317);
+            this.Controls.Add(this.Clean_btn);
             this.Controls.Add(this.DecResult);
             this.Controls.Add(this.BinResult);
             this.Controls.Add(this.ResultInform2);
@@ -200,6 +218,7 @@
         private System.Windows.Forms.Label ResultInform2;
         private System.Windows.Forms.Label BinResult;
         private System.Windows.Forms.Label DecResult;
+        private System.Windows.Forms.Button Clean_btn;
 
     }
 }

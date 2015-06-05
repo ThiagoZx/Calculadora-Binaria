@@ -9,7 +9,14 @@ namespace Binary_Calc
     class Converter
     {
         public string Cvtr_binToDec(string number) {
-           
+
+            bool isNegative = false;
+
+            if (number[0] == '-') {
+                number = number.Substring(1);
+                isNegative = true;
+            }
+
             char[] dec_number = number.ToCharArray();
             Array.Reverse(dec_number);
 
@@ -20,7 +27,13 @@ namespace Binary_Calc
                 result = result + number_int * (Math.Pow(2, i));
             }
 
-            return result.ToString();
+            string strResult = result.ToString();
+
+            if (isNegative) {
+               strResult = "-" + strResult;
+            }
+
+            return strResult;
         }
     }
 }
