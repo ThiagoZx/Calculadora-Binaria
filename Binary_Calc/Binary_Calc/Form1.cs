@@ -13,16 +13,16 @@ namespace Binary_Calc
     public partial class Form1 : Form
     {
         Operations a = new Operations();
+        Converter b = new Converter();
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string b = a.operation_Division("101011", "1111", "0");
-            label1.Text = b;
+        private void numberBtn_Click(object sender, EventArgs e) {
+            Button button = sender as Button;
+            Input.Text += button.Text;
         }
     }
 }

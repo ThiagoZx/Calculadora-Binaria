@@ -78,6 +78,11 @@ namespace Binary_Calc {
             return result;
         }
 
+        private bool checkResult(string number) {
+            bool a = number[0] == '0'? a = false : a = true;
+            return a;
+        }
+
         //Operações
 
         public string operation_Sum(string a, string b) {
@@ -172,11 +177,16 @@ namespace Binary_Calc {
 
             string c = operation_Subtraction(a, b);
 
-            if(Convert.ToInt32(c) >= 0){
+            if(Convert.ToInt32(c) > 0){
                 result = operation_Sum(result, "1");
                 return operation_Division(c, b, result);
-            } else {
+            } else if ( Convert.ToInt32(c) <= 0 ) {
                 result = operation_Sum(result, "1");
+                return result;
+            } else {
+                if (!checkResult(result)) {
+                    result = "< " + result;
+                }
                 return result;
             }
         }
