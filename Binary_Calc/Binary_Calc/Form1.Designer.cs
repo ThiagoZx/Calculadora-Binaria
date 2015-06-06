@@ -41,6 +41,8 @@
             this.BinResult = new System.Windows.Forms.Label();
             this.DecResult = new System.Windows.Forms.Label();
             this.Clean_btn = new System.Windows.Forms.Button();
+            this.HexResult = new System.Windows.Forms.Label();
+            this.ResultInform3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_00
@@ -170,7 +172,7 @@
             // 
             // Clean_btn
             // 
-            this.Clean_btn.Location = new System.Drawing.Point(83, 283);
+            this.Clean_btn.Location = new System.Drawing.Point(83, 324);
             this.Clean_btn.Name = "Clean_btn";
             this.Clean_btn.Size = new System.Drawing.Size(156, 26);
             this.Clean_btn.TabIndex = 12;
@@ -178,11 +180,33 @@
             this.Clean_btn.UseVisualStyleBackColor = true;
             this.Clean_btn.Click += new System.EventHandler(this.Clean_Click);
             // 
+            // HexResult
+            // 
+            this.HexResult.BackColor = System.Drawing.SystemColors.Window;
+            this.HexResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HexResult.Location = new System.Drawing.Point(13, 294);
+            this.HexResult.Name = "HexResult";
+            this.HexResult.Size = new System.Drawing.Size(298, 23);
+            this.HexResult.TabIndex = 14;
+            this.HexResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ResultInform3
+            // 
+            this.ResultInform3.AutoSize = true;
+            this.ResultInform3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultInform3.Location = new System.Drawing.Point(77, 278);
+            this.ResultInform3.Name = "ResultInform3";
+            this.ResultInform3.Size = new System.Drawing.Size(175, 16);
+            this.ResultInform3.TabIndex = 13;
+            this.ResultInform3.Text = "Resultado em Hexadecimal";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 317);
+            this.ClientSize = new System.Drawing.Size(323, 352);
+            this.Controls.Add(this.HexResult);
+            this.Controls.Add(this.ResultInform3);
             this.Controls.Add(this.Clean_btn);
             this.Controls.Add(this.DecResult);
             this.Controls.Add(this.BinResult);
@@ -219,6 +243,8 @@
         private System.Windows.Forms.Label BinResult;
         private System.Windows.Forms.Label DecResult;
         private System.Windows.Forms.Button Clean_btn;
+        private System.Windows.Forms.Label HexResult;
+        private System.Windows.Forms.Label ResultInform3;
 
     }
 }

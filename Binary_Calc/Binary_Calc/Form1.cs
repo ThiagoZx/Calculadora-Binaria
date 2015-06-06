@@ -36,6 +36,7 @@ namespace Binary_Calc
             if (every) {
                 BinResult.Text = "";
                 DecResult.Text = "";
+                HexResult.Text = "";
             }
         }
 
@@ -61,21 +62,25 @@ namespace Binary_Calc
                     result = Operator.operation_Sum(inputNbr_1, inputNbr_2);
                     BinResult.Text = result;
                     DecResult.Text = Converter.Cvtr_binToDec(result);
+                    HexResult.Text = Converter.Cvtr_binToHex(result);
                     break;
                 case "-":
                     result = Operator.operation_Subtraction(inputNbr_1, inputNbr_2);
                     BinResult.Text = result;
                     DecResult.Text = Converter.Cvtr_binToDec(result);
+                    HexResult.Text = Converter.Cvtr_binToHex(result);
                     break;
                 case "/":
                     result = Operator.operation_Division(inputNbr_1, inputNbr_2, "0");
                     BinResult.Text = result;
                     DecResult.Text = Converter.Cvtr_binToDec(result);
+                    HexResult.Text = Converter.Cvtr_binToHex(result);
                     break;
                 case "x":
                     result = Operator.operation_Multiplication(inputNbr_1, inputNbr_2);
                     BinResult.Text = result;
                     DecResult.Text = Converter.Cvtr_binToDec(result);
+                    HexResult.Text = Converter.Cvtr_binToHex(result);
                     break;
             }
 

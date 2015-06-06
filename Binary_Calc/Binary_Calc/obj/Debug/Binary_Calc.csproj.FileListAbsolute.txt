@@ -7,3 +7,12 @@ C:\Users\ThiagoZx\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\o
 C:\Users\ThiagoZx\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\obj\Debug\Binary_Calc.exe
 C:\Users\ThiagoZx\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\obj\Debug\Binary_Calc.pdb
 C:\Users\ThiagoZx\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\obj\Debug\Binary_Calc.Form1.resources
+C:\Users\User\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\bin\Debug\Binary_Calc.exe.config
+C:\Users\User\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\obj\Debug\Binary_Calc.exe
+C:\Users\User\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\obj\Debug\Binary_Calc.pdb
+C:\Users\User\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\bin\Debug\Binary_Calc.exe
+C:\Users\User\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\bin\Debug\Binary_Calc.pdb
+C:\Users\User\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\obj\Debug\Binary_Calc.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\obj\Debug\Binary_Calc.Form1.resources
+C:\Users\User\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\obj\Debug\Binary_Calc.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\Calculadora-Binaria\Binary_Calc\Binary_Calc\obj\Debug\Binary_Calc.csproj.GenerateResource.Cache
